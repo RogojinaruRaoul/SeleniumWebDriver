@@ -1,0 +1,57 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+buildscript {
+
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+
+}
+
+repositories {
+
+    mavenCentral()
+}
+
+
+sourceSets {
+
+	test {
+		java {
+			srcDirs = ['src/main/java','src/main/test']
+		}
+		resources {
+			srcDirs = ['src/main/resources', 'src/main/java']
+		}
+	}
+}
+
+// run 'gradle cleanEclipse eclipse'
+eclipse {
+    classpath {
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+// run 'gradle cleanIdea idea' / 'gradle idea'
+idea {
+    module {
+    	jdkName = '1.8'
+        downloadJavadoc = true
+        downloadSources = true
+    }
+}
+
+dependencies {
+	
+    	compile group: 'junit', name: 'junit', version: '4.12'
+    	compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '3.141.59'
+
+}

@@ -1,0 +1,17 @@
+#Eclipse project files
+.classpath
+.project
+.settings
+
+# IntelliJ project files
+*.iml
+.idea
+
+#binary directories
+bin
+target
+lib
+out
+
+.class
+pom.xml.versionsBackup
